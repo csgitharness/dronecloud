@@ -10,7 +10,7 @@ steps:
   - echo world
 
 
-- name: second step
+- name: second_step
   image: alpine
   commands:
   - echo hello2
@@ -19,4 +19,4 @@ steps:
 
 depends_on:
 - greeting
-- second step
+- second_step
