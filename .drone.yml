@@ -8,3 +8,10 @@ steps:
   commands:
   - echo hello
   - echo world
+
+
+- name: second step
+  image: alpine
+  commands:
+  - echo hello2
+  - echo world2
