@@ -26,3 +26,18 @@ steps:
   depends_on:
   - greeting
   - second_step
+  
+----
+  
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: pipeline2
+  image: alpine
+  commands:
+  - sleep 10
+  - echo hello
+  - echo world
+  
