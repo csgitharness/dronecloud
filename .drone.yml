@@ -8,13 +8,19 @@ steps:
   commands:
   - echo hello
   - echo world
-
-
+  
 - name: second_step
   image: alpine
   commands:
   - echo hello2
   - echo world2
+
+
+- name: third_step
+  image: alpine
+  commands:
+  - echo hello3
+  - echo world3
   depends_on:
   - greeting
   - second_step
