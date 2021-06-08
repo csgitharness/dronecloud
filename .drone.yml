@@ -15,8 +15,6 @@ steps:
   commands:
   - echo hello2
   - echo world2
-
-
-depends_on:
-- greeting
-- second_step
+  depends_on:
+  - greeting
+  - second_step
