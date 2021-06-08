@@ -6,12 +6,14 @@ steps:
 - name: greeting
   image: alpine
   commands:
+  - sleep 10
   - echo hello
   - echo world
   
 - name: second_step
   image: alpine
   commands:
+  - sleep 10
   - echo hello2
   - echo world2
 
