@@ -8,7 +8,7 @@ steps:
   commands:
   - sleep 10
   - echo hello
-  - echo world
+  - echo world2
   
 - name: second_step
   image: alpine
