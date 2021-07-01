@@ -60,5 +60,5 @@ steps:
   image: nginx
   commands:
   - ls
-  - top
+  - echo hello
   
