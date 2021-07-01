@@ -33,7 +33,13 @@ name: default2
 
 steps:
 - name: pipeline2
-  image: node
+  image: alpine
   commands:
-  - npm install
+  - echo test
+  
+- name: another
+  image: alpine
+  commands:
+  - ls
+  - echo world3
   
