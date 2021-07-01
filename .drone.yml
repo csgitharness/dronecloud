@@ -43,3 +43,21 @@ steps:
   - ls
   - echo world3
   
+----
+  
+kind: pipeline
+type: docker
+name: default3
+
+steps:
+- name: pipeline22
+  image: alpine
+  commands:
+  - echo test
+  
+- name: another2
+  image: alpine
+  commands:
+  - ls
+  - echo world3
+  
