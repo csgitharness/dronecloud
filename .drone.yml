@@ -38,11 +38,7 @@ steps:
   commands:
   - echo test
   
-- name: another
-  image: alpine
-  commands:
-  - ls
-  - echo world3
+
   
 ----
   
