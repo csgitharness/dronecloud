@@ -35,9 +35,7 @@ name: default2
 
 steps:
 - name: pipeline2
-  image: alpine
+  image: node
   commands:
-  - sleep 10
-  - echo hello1
-  - echo world
+  - npm install
   
