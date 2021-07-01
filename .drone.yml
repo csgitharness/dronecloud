@@ -38,6 +38,6 @@ steps:
   image: alpine
   commands:
   - sleep 10
-  - echo hello
+  - echo hello1
   - echo world
   
