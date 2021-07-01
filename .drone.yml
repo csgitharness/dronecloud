@@ -56,7 +56,7 @@ steps:
   - echo test
   
 - name: another2
-  image: alpine
+  image: nginx
   commands:
   - ls
   - echo world3
