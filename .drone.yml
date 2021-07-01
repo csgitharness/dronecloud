@@ -53,7 +53,7 @@ steps:
   - echo test
   
 - name: another2
-  image: nginx
+  image: ubuntu
   commands:
   - ls
   - echo hello
