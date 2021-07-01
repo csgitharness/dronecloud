@@ -35,6 +35,7 @@ steps:
 - name: pipeline2
   image: alpine
   commands:
+  - sleep 2s
   - echo test
   
 - name: another
