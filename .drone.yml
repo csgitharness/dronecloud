@@ -3,58 +3,38 @@ type: docker
 name: default
 
 steps:
-- name: greeting
-  image: fedora
-  commands:
-  - sleep 2s
-  - echo hello
-  - echo world2
-  
-- name: second_step
-  image: alpine
-  commands:
-  - echo hello2
-  - echo world2
-
-
-- name: third_step
-  image: alpine
-  commands:
-  - echo hello3
-  - echo world3
-  depends_on:
-  - greeting
-  - second_step
-  
-----
-  
-kind: pipeline
-type: docker
-name: default2
-
-steps:
-- name: pipeline2
-  image: alpine
-  commands:
-  - echo test
-  
-
-  
-----
-  
-kind: pipeline
-type: docker
-name: default3
-
-steps:
-- name: pipeline22
-  image: alpine
-  commands:
-  - echo test
-  
-- name: another2
-  image: ubuntu
-  commands:
-  - ls
-  - echo hello
-  
+  - name: parallel_sleep_20
+    image: alpine:latest
+    commands:
+      - echo 'lets count to 20'
+      - sleep 20
+      - date +"%H:%M:%S"
+      - echo 'done'
+    depends_on:
+      - clone
+  - name: parallel_sleep_10
+    image: alpine:latest
+    commands:
+      - echo 'lets count to 10'
+      - sleep 10
+      - date +"%H:%M:%S"
+      - echo 'done'
+    depends_on:
+      - clone
+  - name: parallel_no_sleep
+    image: alpine:latest
+    commands:
+      - date +"%H:%M:%S"
+      - echo 'done'
+    depends_on:
+      - clone
+  - name: parallel_final_step
+    image: alpine:latest
+    commands:
+      - echo 'all the sleeps are complete'
+      - date +"%H:%M:%S"
+      - echo 'done'
+    depends_on:
+      - parallel_sleep_20
+      - parallel_sleep_10
+      - parallel_no_sleep
